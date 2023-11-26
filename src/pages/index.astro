@@ -4,17 +4,30 @@ import Card from '../components/Card.astro';
 import { Image } from 'astro:assets';
 import krapterLogo from '../images/Krapter.png';
 import ContentCard from '../components/ContentCard.astro';
+import ContentAboutCard from '../components/ContentAboutCard.astro';
+
+
+const topContent = [
+	{
+		title: 'Krapter',
+		body: 'Vi har som ambisjon om å bli norges ledende leverandør av bakkemontert solanleggVi har kraften til å skape, ønsker du et bakkemontert solcelleanlegg, ikke nøl med å ta kontakt.',
+	},
+	{
+		title: 'Om oss',
+		body: "Vi er et team med lang erfaring innen utvikling og leveranser innenfor fornybar kraft og solcelleanlegg. sammen ønsker vi å bidra med kraften til å skape ny kraft produksjon både lokalt og i større anlegg."
+	}
+];
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Krapter - kraften til å skape">
 	<main>
-		
 		<header>
 			<Image src={krapterLogo} alt="Krapter logo" width={230} height={94}/>
 			<h1 class="text-gradient">- kraften til å skape</h1>
 		</header>
 		
-
+		<ContentAboutCard content={topContent} />
+		
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="tel:+4740498840"
