@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { Image } from 'astro:assets';
+import krapterLogo from '../images/Krapter.png';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		
+		<header>
+			<Image src={krapterLogo} alt="Krapter logo" width={230} height={94}/>
+			<h1 class="text-gradient">- kraften til å skape</h1>
+		</header>
+		
+
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="tel:+4740498840"
+				title="Telefon: 404 98 840"
+				body="Ta kontakt for en uforpliktende samtale."
+			/>
+			<Card
+				href="mailto:Torgrim@kraftr.no"
+				title="Epost: Torgrim@kraftr.no"
+				body="Send oss en epost."
+				
+			/>
+			<Card
+				href="https://maps.app.goo.gl/eqJSBVvukcY2gHnb7"
+				title="Post- og besøksadresse"
+				body="Elvegata 6, 2500 Tynset"
+				target="_blank"
+			/>
+			<Card
+				href="#"
+				title="KRAPTER AS"
+				body="Organisasjonsnummer: 932424800"
+			/>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+
+	header {
+		margin-top: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 2rem;
+		width:100%;
+		height: var(--header-height);
+
+
+	}
+
+	header img {
+		transform: scale(1.5);
+	}
+
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 2rem;
+		font-weight: 500;
+		line-height: 1;
+		text-align: center;
+		margin-top: 1em;;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style>

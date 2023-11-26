@@ -1,0 +1,108 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<div class="bg-drop"></div>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		/* CSS HEX */
+		--dark-cyan: #3B999Dff;
+		--black: #000000ff;
+		--pear: #CAD335ff;
+		--black-2: #000000ff;
+		--yellow: #FCFD02ff;
+
+		/* CSS HSL */
+		/*
+		--dark-cyan: hsla(182, 45%, 42%, 1);
+		--black: hsla(0, 0%, 0%, 1);
+		--pear: hsla(63, 64%, 52%, 1);
+		--black-2: hsla(0, 0%, 0%, 1);
+		--yellow: hsla(60, 98%, 50%, 1);
+		*/
+		--accent: 136, 58, 234;
+		--accent-light: 224, 204, 250;
+		--accent-dark: 49, 10, 101;
+		--accent-gradient: linear-gradient(
+			45deg,
+			var(--pear),
+			var(--dark-cyan) 30%,
+			white 60%
+		);
+
+		--accent-gradient-bg: linear-gradient(
+			45deg,
+			var(--pear),
+			var(--dark-cyan) 10%,
+			white 60%
+		);
+
+
+
+
+
+		--header-height: 150px;
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: #13151a;
+		background-size: 224px;
+	}
+
+	.bg-drop {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: url(/solpanelVertikal.jpg); 
+
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: cover;
+		opacity: 0.3;
+		pointer-events: none;
+		
+	}
+
+	.bg-drop:after {
+		  content:""; 
+		  position: absolute; 
+		  bottom: 0;
+		  left: 0;
+		  right: 0;
+		  top:0;
+		  background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgb(0, 0, 0) 100%);
+		  width: 100%; 
+	}
+
+	code {
+		font-family:
+			Menlo,
+			Monaco,
+			Lucida Console,
+			Liberation Mono,
+			DejaVu Sans Mono,
+			Bitstream Vera Sans Mono,
+			Courier New,
+			monospace;
+	}
+</style>
